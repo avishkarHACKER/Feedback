@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form with Privacy Policy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #privacy-policy {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        #show-privacy-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #show-privacy-button:hover {
+            background-color: #0056b3;
+        }
+
+        #success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #329b31;
+            color: #fff;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button#report-button {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    /* Hover style for the REPORT button */
+    button#report-button:hover {
+        background-color: #0056b3;
+    
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <form id="feedback-form" action="submit_feedback.php" method="post" onsubmit="showSuccessMessage(); return false;">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="success-message">
+            <p>Feedback has been submitted successfully. Thank you!</p>
+        </div>
+           <br>
+
+           <div class="form-group">
+            <label for="message">REPORT</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+           
+
+    <button type="button" id="report-button" onclick="sendReport()">REPORT</button>
+
+    <!-- Success message for REPORT -->
+    <div id="report-success-message" style="display: none; background-color: #ed0707; color: #fff; text-align: center; padding: 20px; border-radius: 5px; margin-top: 20px;">
+        REPORT HAS BEEN SENT
+    </div>
+</div>
+    
+</form>
+        
+        <!-- Privacy Policy Information (Initially Hidden) -->
+        <div id="privacy-policy" class="privacy-policy" style="display: none;">
+            <h2>Privacy Policy for AV-SEARCH</h2>
+            <p>Introduction<br>
+            Welcome to AV-SEARCH! We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, AV-SEARCH (the "Website"). By using the Website, you consent to the practices described in this policy.</p>
+
+            <!-- Add the rest of your privacy policy content here -->
+
+            <p>Privacy Policy for AV-SEARCH
+                Introduction
+                <br>Welcome to AV-SEARCH! We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, AV-SEARCH (the "Website"). By using the Website, you consent to the practices described in this policy.
+                <br>
+                
+
+                <br> Information We Collect <br>
+                We do not collect any personally identifiable information from our users. We are committed to providing a search service that respects your privacy, and we do not track your search queries or collect any data that could be used to identify you.
+                
+                <br>
+
+                <br> Cookies and Tracking <br>
+                We do not use cookies or any tracking mechanisms to collect information about your online activities.
+                <br>
+
+                <br> Third-Party Links <br>
+                The Website may contain links to third-party websites. We are not responsible for the privacy practices or content of these third-party sites. We encourage you to review the privacy policies of these websites before providing any personal information.
+                <br>
+
+                <br> Children's Privacy <br>
+                AV-SEARCH is not intended for use by individuals under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe that your child has provided us with their personal information, please contact us at [Insert Contact Information], and we will take steps to remove that information from our servers.
+                <br>
+
+                <br> Security <br>
+                While we do not collect personal information, we take reasonable steps to ensure the security of the Website and protect it from unauthorized access or disclosure. However, please be aware that no data transmission over the internet can be guaranteed to be 100% secure.
+                
+                <br>
+                <br>Changes to this Privacy Policy <br>
+                We reserve the right to update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. We encourage you to review this Privacy Policy periodically.
+                
+                <br>
+                <br>Contact Us <br>
+                If you have any questions or concerns about our privacy practices or this Privacy Policy, please contact us at
+                <br>[Gmail: avishkardavhale@gmail.com
+                <br>Phone: +91 7558714452
+                <br> Facebook: AVpatil- https://www.facebook.com/profile.php?id=100030214987577
+                <br>Instagram: _a.vishkar - https://www.instagram.com/_a.vishkar?igsh=YzljYTk1ODg3Zg==.<br>
+            
+        </div>
+        
+        <!-- Button to Show Privacy Policy -->
+        <button id="show-privacy-button" onclick="showPrivacyPolicy()">Show Privacy Policy</button>
+    </div>
+
+    <script>
+        function showPrivacyPolicy() {
+            var privacyPolicy = document.getElementById("privacy-policy");
+            var showButton = document.getElementById("show-privacy-button");
+            
+            if (privacyPolicy.style.display === "none") {
+                privacyPolicy.style.display = "block";
+                showButton.textContent = "Hide Privacy Policy";
+            } else {
+                privacyPolicy.style.display = "none";
+                showButton.textContent = "Show Privacy Policy";
+            }
+        }
+
+        function showSuccessMessage() {
+            document.getElementById("feedback-form").style.display = "none";
+            document.getElementById("success-message").style.display = "block";
+        }
+
+        function showSuccessMessage() {
+            document.getElementById("feedback-form").style.display = "none";
+            document.getElementById("success-message").style.display = "block";
+        }
+
+        function sendReport() {
+            var reportButton = document.getElementById("report-button");
+            var reportSuccessMessage = document.getElementById("report-success-message");
+
+            // Change the message box color to green
+            reportSuccessMessage.style.backgroundColor = "#4CAF50";
+
+            // Show the success message
+            reportSuccessMessage.style.display = "block";
+
+            // Disable the REPORT button after sending the report
+            reportButton.disabled = true;
+
+            // Optionally, you can change the text of the REPORT button
+            reportButton.textContent = "REPORT SENT";
+        }
+    </script>
+</body>
+
+</html>
